@@ -15,10 +15,7 @@
 </script>
 
 <script>
-	import { each } from 'svelte/internal';
-
 	export let movieDetails;
-	console.log(movieDetails);
 </script>
 
 <div class="relative movie-details pt-20 mx-auto">
