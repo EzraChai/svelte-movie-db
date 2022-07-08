@@ -10,7 +10,7 @@ const config = {
 	],
 	kit: {
 		target: "#svelte",
-		adapter: node({env: {port: process.env.Port}}),
+		adapter: node({env: {port: process.env.PORT}}),
 	}
 };
 
