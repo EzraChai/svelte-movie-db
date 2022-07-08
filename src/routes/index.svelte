@@ -1,25 +1,27 @@
 <script context="module">
 	export async function load({ fetch }) {
+		const api_key = import.meta.env.VITE_MOVIEDB_API_KEY;
 		const res = await fetch(
-			`https://api.themoviedb.org/3/movie/popular?api_key=bb2a3c35744ec26c5fbde91ef906b421&language=en-US&page=1`
+			`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
 		);
 		const data = await res.json();
-		if (res.ok) {
-			return {
-				status: res.status,
-				props: {
-					popular: data.results
-				}
-			};
-		}
+
+		return {
+			status: res.status,
+			props: {
+				popular: res.ok && data.results
+			}
+		};
 	}
 </script>
 
 <script lang="ts">
 	import PopularMovies from '../components/PopularMovies.svelte';
+	import SearchMovies from '../components/SearchMovies.svelte';
 	export let popular;
 </script>
 
 <section class="bg-zinc-100">
+	<SearchMovies />
 	<PopularMovies {popular} />
 </section>
