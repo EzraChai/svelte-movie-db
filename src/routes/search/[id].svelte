@@ -19,8 +19,6 @@
 	import MovieCard from '../../components/MovieCard.svelte';
 
 	export let popular;
-	export let search;
-	console.log(popular);
 </script>
 
 <section class="bg-zinc-100 pt-10">
