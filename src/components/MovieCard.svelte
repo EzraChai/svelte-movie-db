@@ -1,11 +1,13 @@
 <script>
 	export let movie;
+	import { fly } from 'svelte/transition';
 </script>
 
 <div
+	in:fly={{ y: 20, duration: 700, delay: 200 }}
 	class="movie-card bg-white rounded-lg overflow-hidden hover:cursor-pointer hover:-translate-y-2 transition-all"
 >
-	<a href={`/movie/${movie.id}`}>
+	<a sveltekit:noscroll sveltekit:prefetch href={`/movie/${movie.id}`}>
 		<div class="relative">
 			<div class="absolute opacity-0 hover:opacity-25 transition-opacity bg-black w-full h-full" />
 			<img

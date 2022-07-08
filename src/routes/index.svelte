@@ -17,11 +17,9 @@
 
 <script lang="ts">
 	import PopularMovies from '../components/PopularMovies.svelte';
-	import SearchMovies from '../components/SearchMovies.svelte';
 	export let popular;
 </script>
 
 <section class="bg-zinc-100">
-	<SearchMovies />
 	<PopularMovies {popular} />
 </section>
